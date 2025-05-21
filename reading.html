@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reading</title>
+</head>
+<body>
+    <h2>Reading Activity</h2>
+    <p>This is where the AI-generated reading will appear.</p>
+    <button onclick="markProgress()">Mark as Complete</button>
+
+    <script>
+        function markProgress() {
+            fetch('/update-progress', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({activity: 'reading'})
+            }).then(() => alert("Progress saved!"));
+        }
+    </script>
+</body>
+</html>

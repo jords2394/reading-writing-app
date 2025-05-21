@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Writing</title>
+</head>
+<body>
+    <h2>Writing Activity</h2>
+    <p>This is where AI writing prompts and grammar feedback will go.</p>
+    <button onclick="markProgress()">Mark as Complete</button>
+
+    <script>
+        function markProgress() {
+            fetch('/update-progress', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({activity: 'writing'})
+            }).then(() => alert("Progress saved!"));
+        }
+    </script>
+</body>
+</html>
